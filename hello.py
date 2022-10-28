@@ -17,6 +17,7 @@ print(sunset)
 #(sunset_time)
 
 date_string = date+" "+sunset
+print(date_string)
 format = '%Y-%m-%d %I:%M %p'
 my_date = datetime.strptime(date_string, format)
 print(my_date)
