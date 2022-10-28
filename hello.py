@@ -1,4 +1,4 @@
 import os
 
 print("hello world.")
-print(os.environ["TEST"]
+print(os.environ["TEST"])
