@@ -18,7 +18,8 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
-
+    env:  
+      TEST  : ${{ secrets.TEST }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -26,6 +27,5 @@ jobs:
       - uses: actions/setup-python@v4
         with:
            python-version: '3.10' 
-        env:  
-          TEST  : ${{ secrets.TEST }}
+
       - run: python hello.py
