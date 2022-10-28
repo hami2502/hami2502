@@ -10,7 +10,7 @@ url="https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=2022
 
 response=requests.get(url)
 
-data = json.loads(r.content)
+data = json.loads(response.content)
 sunset = data['results']['sunset'] 
 sunset_time = time(int(sunset[11:13]), int(sunset[14:16])) 
 print(sunset)
