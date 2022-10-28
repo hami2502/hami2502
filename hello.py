@@ -18,6 +18,6 @@ print(sunset)
 
 date_string = '2009-11-29 03:17 PM'
 format = '%Y-%m-%d %I:%M %p'
-my_date = datetime.strptimez(date_string, format)
+my_date = datetime.strptime(date_string, format)
 print(my_date)
 
