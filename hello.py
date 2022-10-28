@@ -12,6 +12,6 @@ response=requests.get(url)
 
 data = json.loads(response.content)
 sunset = data['results']['sunset'] 
-sunset_time = time(int(sunset[11:13]), int(sunset[14:16])) 
+#       sunset_time = time(int(sunset[11:13]), int(sunset[14:16])) 
 print(sunset)
-print(sunset_time)
+#(sunset_time)
