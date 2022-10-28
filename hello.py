@@ -5,8 +5,8 @@ from datetime import datetime, time, timedelta
 
 print("hello world.")
 print(os.environ["TEST"]=="TEST")
-
-url="https://api.sunrise-sunset.org/json?lat=49.460983&lng=11.061859&date=2022-10-28"
+date="2022-10-28"
+url="https://api.sunrise-sunset.org/json?lat=49.460983&lng=11.061859&date="+date
 
 response=requests.get(url)
 
@@ -16,8 +16,10 @@ sunset = data['results']['sunset']
 print(sunset)
 #(sunset_time)
 
-date_string = '2009-11-29 03:17 PM'
+date_string = date+" "+sunset
 format = '%Y-%m-%d %I:%M %p'
 my_date = datetime.strptime(date_string, format)
 print(my_date)
 
+result_1 = my_date + timedelta(hours=1)
+print(result_1)
