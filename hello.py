@@ -6,7 +6,7 @@ from datetime import datetime, time, timedelta
 print("hello world.")
 print(os.environ["TEST"]=="TEST")
 
-url="https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=2022-10-14"
+url="https://api.sunrise-sunset.org/json?lat=49.4521&lng=11.0767&date=2022-10-28"
 
 response=requests.get(url)
 
