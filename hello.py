@@ -3,6 +3,21 @@ import requests
 import json
 from datetime import datetime, time, timedelta
 
+def calc_last_sunday_of_march(year):
+	return calc_last_sunday_of_month(year, 3, 31)
+
+def calc_last_sunday_of_october(year):
+	return calc_last_sunday_of_month(year, 10, 31)
+
+def calc_last_sunday_of_month(year, month, day):
+	last_day_of_month = datetime.datetime(year, month, day)
+	weekday_last_day_of_month = last_day_of_month.weekday()
+
+	if weekday_last_day_of_month==6:
+		return last_day_of_month
+	else:
+		return datetime.datetime(year, month, day-1-weekday_last_day_of_month)
+
 print("hello world.")
 print(os.environ["TEST"]=="TEST")
 date="2022-10-28"
@@ -24,3 +39,5 @@ print(my_date)
 
 result_1 = my_date + timedelta(hours=1)
 print(result_1)
+
+print(calc_last_sunday_of_october(2022))
