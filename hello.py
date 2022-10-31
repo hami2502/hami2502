@@ -18,6 +18,14 @@ def calc_last_sunday_of_month(year, month, day):
 	else:
 		return datetime.datetime(year, month, day-1-weekday_last_day_of_month)
 
+def add_quick_task(task_string):
+    api = TodoistAPI("my token")
+    try:
+        tasks = api.get_tasks()
+        print(tasks)
+    except Exception as error:
+        print(error)
+ 
 print("hello world.")
 print(os.environ["TEST"]=="TEST")
 date="2022-10-28"
