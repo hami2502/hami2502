@@ -2,6 +2,7 @@ import os
 import requests
 import json
 from datetime import datetime, time, timedelta
+from todoist_api_python.api import TodoistAPI
 
 def calc_last_sunday_of_march(year):
 	return calc_last_sunday_of_month(year, 3, 31)
@@ -19,10 +20,9 @@ def calc_last_sunday_of_month(year, month, day):
 		return datetime.datetime(year, month, day-1-weekday_last_day_of_month)
 
 def add_quick_task(task_string):
-    api = TodoistAPI("my token")
+    api = TodoistAPI(os.environ["TODOIST_API_KEY"]
     try:
-        tasks = api.get_tasks()
-        print(tasks)
+        tasks = api.add_quick_task(task_string)
     except Exception as error:
         print(error)
  
