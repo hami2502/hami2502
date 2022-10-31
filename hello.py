@@ -20,7 +20,7 @@ def calc_last_sunday_of_month(year, month, day):
 		return datetime.datetime(year, month, day-1-weekday_last_day_of_month)
 
 def add_quick_task(task_string):
-    api = TodoistAPI(os.environ["TODOIST_API_KEY"]
+    api = TodoistAPI(os.environ["TODOIST_API_KEY"])
     try:
         tasks = api.add_quick_task(task_string)
     except Exception as error:
