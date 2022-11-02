@@ -26,26 +26,27 @@ def add_quick_task(task_string):
     except Exception as error:
         print(error)
  
-print("hello world.")
-print(os.environ["TEST"]=="TEST")
-date="2022-10-28"
-url="https://api.sunrise-sunset.org/json?lat=49.460983&lng=11.061859&date="+date
+#print("hello world.")
+#print(os.environ["TEST"]=="TEST")
+#date="2022-10-28"
+#url="https://api.sunrise-sunset.org/json?lat=49.460983&lng=11.061859&date="+date
 
-response=requests.get(url)
+#response=requests.get(url)
 
-data = json.loads(response.content)
-sunset = data['results']['sunset'] 
+#data = json.loads(response.content)
+#sunset = data['results']['sunset'] 
 #       sunset_time = time(int(sunset[11:13]), int(sunset[14:16])) 
-print(sunset)
+#print(sunset)
 #(sunset_time)
 
-date_string = date+" "+sunset
-print(date_string)
-format = '%Y-%m-%d %I:%M %p'
-my_date = datetime.strptime(date_string, format)
-print(my_date)
+#date_string = date+" "+sunset
+#print(date_string)
+#format = '%Y-%m-%d %I:%M %p'
+#my_date = datetime.strptime(date_string, format)
+#print(my_date)
 
-result_1 = my_date + timedelta(hours=1)
-print(result_1)
+#result_1 = my_date + timedelta(hours=1)
+#print(result_1)
 
-print(calc_last_sunday_of_october(2022))
+#print(calc_last_sunday_of_october(2022))
+add_quick_task("jeden Freitag gggg")
