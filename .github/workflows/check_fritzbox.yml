@@ -11,6 +11,6 @@ jobs:
       - name: Ping Test
         id: ping
         run: |
-          curl -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" -o /dev/null
+          curl -k -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" -o /dev/null
           
 
