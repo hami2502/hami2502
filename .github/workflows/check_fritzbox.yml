@@ -11,6 +11,6 @@ jobs:
       - name: Ping Test
         id: ping
         run: |
-          ping -c 1 ${{ secrets.FRITZ_BOX_IP_ADDRESS }} > /dev/null 2>&1
+          ping -c 1 google.de > /dev/null 2>&1
           echo "::set-output name=status::$?"
 
