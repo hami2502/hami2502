@@ -32,12 +32,3 @@ jobs:
             --form-string "sound=siren" \
             https://api.pushover.net/1/messages.json
           fi
-          curl -s \
-            --form-string "token=${{ secrets.PUSHOVER_API_TOKEN }}" \
-            --form-string "user=${{ secrets.PUSHOVER_USER_KEY }}" \
-            --form-string "title=FRITZ!Box Verfügbarkeit" \
-            --form-string "message=FRITZ!Box nicht erreichbar - Response $response" \
-            --form-string "priority=1" \
-            --form-string "sound=siren" \
-            https://api.pushover.net/1/messages.json
-
