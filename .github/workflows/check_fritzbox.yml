@@ -1,8 +1,8 @@
-name: Ping Check
+name: Ping Fritzbox
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Dies führt die Action viertelstündlich aus
+    - cron: '*/5 * * * *'  
 
 jobs:
   ping:
@@ -11,6 +11,6 @@ jobs:
       - name: Ping Test
         id: ping
         run: |
-          curl -k -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" -o /dev/null
+          curl -k -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" 
           
 
