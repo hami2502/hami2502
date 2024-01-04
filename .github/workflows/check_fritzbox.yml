@@ -8,9 +8,18 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Test
-        id: ping
+      - name: Check FRITZ!Box Connectivity
         run: |
-          curl -k -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" 
-          
+          set +e
+          response=$(curl -k -sL -w "%{http_code}\\n" "${{ secrets.FRITZ_BOX_IP_ADRESS }}" -o /dev/null)
+          exit_code=$?
+          set -e
+          echo "HTTP Status: $response"
+          echo "Curl Exit Code: $exit_code"
+          if [[ $exit_code -eq 56 && $response -eq 200 ]]; then
+            echo "Curl exited with code 56, but HTTP status was 200. Treating as success."
+          elif [[ $exit_code -ne 0 ]]; then
+            echo "Error: Curl exited with code $exit_code"
+            exit $exit_code
+          fi
 
