@@ -11,6 +11,6 @@ jobs:
       - name: Ping Test
         id: ping
         run: |
-          ping -c 1 google.de
+          curl -sL -w "%{http_code}\\n" "http://google.de" -o /dev/null
           
 
