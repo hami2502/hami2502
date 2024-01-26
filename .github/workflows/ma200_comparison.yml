@@ -20,4 +20,4 @@ jobs:
         pip install yfinance
 
     - name: Run MA200 Comparison
-      run: python ma200_comparison.py XDWT
+      run: python ma200_comparison.py XDWT.L
