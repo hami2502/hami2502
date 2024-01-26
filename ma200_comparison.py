@@ -22,8 +22,8 @@ percent_difference = ((latest_close - latest_ma200) / latest_ma200) * 100
 
 # Entscheidungslogik
 if percent_difference > 3:
-    exit 1  # Kaufen
+    sys.exit(1)
 elif percent_difference < -3:
-    exit -1. #Verkaufen
+    sys.exit(-1)
 else:
-    exit 0
+    sys.exit(0)
