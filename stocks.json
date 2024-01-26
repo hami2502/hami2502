@@ -1,3 +1,7 @@
 [
-    {"name": "Unternehmen A", "wkn": "123456", "ticker": "XDWT.DE" }
+    
+    {"name": "EUWAX Gold I", "wkn": "123456", "ticker": "GOLD.SG" },
+    {"name": "Wisdomtree Artifical Intelligence", "wkn": "123456", "ticker": "WTAI.MI" },
+    {"name": "Unternehmen A", "wkn": "123456", "ticker": "XDWT.DE" },
+    
 ]
