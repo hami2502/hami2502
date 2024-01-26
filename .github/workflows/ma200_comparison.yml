@@ -1,0 +1,23 @@
+name: MA200 Comparison
+
+on: push
+
+jobs:
+  compare-ma200:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        pip install yfinance
+
+    - name: Run MA200 Comparison
+      run: python ma200_comparison.py XDWT
