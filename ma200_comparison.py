@@ -17,3 +17,13 @@ latest_ma200 = data['MA200'].iloc[-1]
 # Vergleich und Ausgabe
 print(f"Aktueller Kurs von {ticker_symbol}: {latest_close}")
 print(f"MA200 von {ticker_symbol}: {latest_ma200}")
+
+percent_difference = ((latest_close - latest_ma200) / latest_ma200) * 100
+
+# Entscheidungslogik
+if percent_difference > 3:
+    exit 1  # Kaufen
+elif percent_difference < -3:
+    exit -1. #Verkaufen
+else:
+    exit 0
