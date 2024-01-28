@@ -1,8 +1,7 @@
 import yfinance as yf
 import sys
 import json
-
-json
+import pandas as pd
 
 # ATR berechnen
 def calculate_atr(data, window=14):
